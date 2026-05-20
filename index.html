@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ペットフード・用品診断 - 愛犬・愛猫に最適なフードを無料診断</title>
+<meta name="description" content="5つの質問でペットに最適なフードカテゴリを診断。犬・猫の年齢・体重・健康上の悩みに合わせた食事管理のポイントとおすすめ商品を提案します。">
+<meta property="og:title" content="ペットフード・用品診断 | 愛犬・愛猫に最適なフードを無料診断">
+<meta property="og:description" content="ペットの年齢・体重・悩みから最適なフードカテゴリを診断する無料ツール。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://appadaycreator.github.io/pet-food-advisor/">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8427583028015858" crossorigin="anonymous"></script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","s3t9vl8h3v");</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { background: linear-gradient(135deg, #f7fee7 0%, #ecfccb 50%, #bef264 100%); min-height: 100vh; }
+  .card { background: white; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.09); }
+  .btn-primary { background: #65a30d; color: white; border: none; border-radius: 0.75rem; padding: 0.875rem 2rem; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: all 0.2s; width: 100%; display: block; }
+  .btn-primary:hover { background: #4d7c0f; transform: translateY(-1px); }
+  .option-btn { border: 2px solid #e5e7eb; border-radius: 0.75rem; padding: 0.875rem 1rem; cursor: pointer; transition: all 0.2s; background: white; width: 100%; text-align: left; margin-bottom: 0.625rem; font-size: 0.95rem; }
+  .option-btn:hover, .option-btn.selected { border-color: #65a30d; background: #f7fee7; font-weight: 600; }
+  .screen { display: none; }
+  .screen.active { display: block; }
+  .progress-track { background: #ecfccb; border-radius: 9999px; height: 8px; }
+  .progress-bar { background: #65a30d; height: 8px; border-radius: 9999px; transition: width 0.4s ease; }
+</style>
+</head>
+<body class="font-sans">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="max-w-lg mx-auto px-4 py-10">
+
+  <div id="screen-intro" class="screen active">
+    <div class="text-center mb-8">
+      <div class="text-6xl mb-4">🐾</div>
+      <h1 class="text-2xl font-bold text-gray-800 mb-2">ペットフード・用品診断</h1>
+      <p class="text-gray-600 text-sm">5つの質問で、愛するペットに<br>最適なフードカテゴリを診断します</p>
+    </div>
+    <div class="card p-6 mb-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="text-2xl">🐕</div>
+        <div><div class="font-bold text-gray-800 text-sm">犬・猫対応</div><div class="text-lime-600 text-sm">種類・年齢・体重に合わせて診断</div></div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="text-2xl">🥗</div>
+        <div><div class="font-bold text-gray-800 text-sm">健康状態別アドバイス</div><div class="text-gray-600 text-sm">肥満・アレルギー・毛並み等の悩みに対応</div></div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="text-2xl">🛒</div>
+        <div><div class="font-bold text-gray-800 text-sm">おすすめ商品を提案</div><div class="text-gray-600 text-sm">Amazonで手軽に購入できるフードを紹介</div></div>
+      </div>
+    </div>
+    <button class="btn-primary" onclick="startDiagnosis()">診断スタート →</button>
+    <p class="text-center text-xs text-gray-500 mt-3">獣医師の診断の代替ではありません</p>
+  </div>
+
+  <div id="screen-questions" class="screen">
+    <div class="mb-6">
+      <div class="flex justify-between text-xs text-gray-500 mb-1">
+        <span id="q-label">質問 1 / 5</span>
+        <span id="q-pct">20%</span>
+      </div>
+      <div class="progress-track"><div class="progress-bar" id="prog" style="width:20%"></div></div>
+    </div>
+    <div class="card p-6">
+      <h2 class="text-lg font-bold text-gray-800 mb-5" id="q-text"></h2>
+      <div id="opts"></div>
+    </div>
+  </div>
+
+  <div id="screen-loading" class="screen text-center py-20">
+    <div class="text-5xl mb-4">🐾</div>
+    <div class="text-gray-700 font-bold text-lg mb-2">診断中...</div>
+    <div class="text-gray-500 text-sm">最適なフードを探しています</div>
+  </div>
+
+  <div id="screen-results" class="screen">
+    <div class="text-center mb-6">
+      <div class="text-5xl mb-3">🏆</div>
+      <h2 class="text-xl font-bold text-gray-800">診断結果</h2>
+    </div>
+    <div class="card p-6 mb-4">
+      <div class="text-center mb-4">
+        <div class="text-3xl mb-2" id="res-emoji">🥗</div>
+        <div class="text-xl font-bold text-lime-700" id="res-type"></div>
+      </div>
+      <p class="text-sm text-gray-600 mb-3" id="res-desc"></p>
+      <div class="bg-lime-50 rounded-lg p-3 space-y-1">
+        <div class="font-bold text-lime-800 text-sm mb-2">📋 食事管理のポイント</div>
+        <div class="text-sm text-gray-700" id="res-tips"></div>
+      </div>
+    </div>
+    <div class="card p-6 mb-4">
+      <h3 class="font-bold text-gray-800 mb-3">🛒 おすすめのフードを探す</h3>
+      <div id="aff-area"></div>
+    </div>
+    <div class="card p-4 mb-4">
+      <h3 class="font-bold text-gray-800 mb-2 text-sm">🐾 合わせて確認しよう</h3>
+      <a href="/pet-insurance-check/" class="text-lime-600 text-sm underline">ペット保険診断 - 医療費に備える →</a>
+    </div>
+    <button class="btn-primary" style="background:#6b7280;" onclick="restart()">もう一度診断する</button>
+  </div>
+
+</div>
+
+<script>
+var Qs = [
+  { text:"ペットの種類は？", opts:["犬（小型・5kg未満）","犬（中・大型・5kg以上）","猫","その他（小動物・鳥等）"], key:"type" },
+  { text:"年齢は？", opts:["子犬・子猫（1歳未満）","成犬・成猫（1〜7歳）","シニア（8歳以上）"], key:"age" },
+  { text:"現在の体型・体重は？", opts:["やせぎみ","ちょうど良い","少し太りぎみ","かなり肥満"], key:"weight" },
+  { text:"気になる健康上の悩みは？", opts:["毛並み・皮膚が気になる","消化・お腹の調子","アレルギー・食物過敏","特になし・健康維持したい"], key:"concern" },
+  { text:"フードにかけられる月額予算は？", opts:["〜2,000円","2,000〜5,000円","5,000〜10,000円","10,000円以上（プレミアム）"], key:"budget" }
+];
+
+var foodMap = {
+  allergy: { emoji:"🌿", type:"グレインフリー（穀物不使用）フード", desc:"アレルギーの原因になりやすい小麦・大豆を除いたフード。消化が良く皮膚・被毛の改善も期待できます。", tips:"• 同じタンパク源を続けず数種類をローテーション\n• 切り替えは10日かけてゆっくり行う\n• 便の状態・皮膚の様子を記録する" },
+  diet: { emoji:"🥦", type:"ダイエット・低カロリーフード", desc:"カロリーを抑えつつ必要な栄養素をバランスよく含んだフード。満腹感を高める食物繊維が豊富。", tips:"• 1日の給与量を守り、おやつは総摂取量の10%以内\n• 食事を1日2〜3回に分けて与える\n• 週1回体重を量って変化を記録する" },
+  senior: { emoji:"🦴", type:"シニア対応フード（低リン・関節ケア）", desc:"高齢ペットの腎臓・関節に配慮した低タンパク・低リンのフード。グルコサミン配合で関節をサポート。", tips:"• 腎臓病予防のため水分摂取を増やす（ウェットフード混合も可）\n• 関節への負担を減らすため食事台を高くする\n• 定期的な健康診断（年2回以上）を実施する" },
+  puppy: { emoji:"🌟", type:"パピー・キトン（成長期）フード", desc:"成長期に必要なカルシウム・DHA・タンパク質が豊富なフード。骨・脳・免疫の発達をサポート。", tips:"• 1日3〜4回の少量頻回食が理想\n• 月齢に合わせたフードに切り替えを\n• 肥満にならないよう給与量を守る" },
+  standard: { emoji:"🍗", type:"バランス重視のプレミアムフード", desc:"総合栄養食として必要な栄養素がバランスよく含まれたフード。添加物・着色料不使用のプレミアムタイプ。", tips:"• 年齢・体重に合わせた給与量を守る\n• 常に新鮮な水を飲めるようにする\n• フードの変更は徐々に行う（7〜10日かけて）" }
+};
+
+var cur=0, ans={};
+
+function startDiagnosis() { show('questions'); renderQ(); }
+
+function show(name) {
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById('screen-'+name).classList.add('active');
+}
+
+function renderQ() {
+  var q=Qs[cur];
+  var pct=Math.round((cur+1)/Qs.length*100);
+  document.getElementById('q-label').textContent='質問 '+(cur+1)+' / '+Qs.length;
+  document.getElementById('q-pct').textContent=pct+'%';
+  document.getElementById('prog').style.width=pct+'%';
+  document.getElementById('q-text').textContent=q.text;
+  var c=document.getElementById('opts'); c.innerHTML='';
+  q.opts.forEach(function(opt,i){
+    var b=document.createElement('button');
+    b.className='option-btn'; b.textContent=opt;
+    b.onclick=function(){ pick(i,opt,q.key); };
+    c.appendChild(b);
+  });
+}
+
+function pick(i,val,key) {
+  ans[key]={i:i,val:val};
+  document.querySelectorAll('.option-btn').forEach(function(b,j){ b.classList.toggle('selected',j===i); });
+  setTimeout(function(){
+    cur++;
+    if(cur<Qs.length){ renderQ(); } else { show('loading'); setTimeout(showResults,1600); }
+  },300);
+}
+
+function showResults() {
+  var concernIdx = ans.concern ? ans.concern.i : 3;
+  var ageIdx = ans.age ? ans.age.i : 1;
+  var weightIdx = ans.weight ? ans.weight.i : 1;
+
+  var key;
+  if(concernIdx===2) { key='allergy'; }
+  else if(weightIdx>=2) { key='diet'; }
+  else if(ageIdx===2) { key='senior'; }
+  else if(ageIdx===0) { key='puppy'; }
+  else { key='standard'; }
+
+  var food=foodMap[key];
+  document.getElementById('res-emoji').textContent=food.emoji;
+  document.getElementById('res-type').textContent=food.type;
+  document.getElementById('res-desc').textContent=food.desc;
+  document.getElementById('res-tips').innerHTML=food.tips.replace(/\n/g,'<br>');
+
+  var budgetIdx=ans.budget?ans.budget.i:1;
+  var petType=ans.type?ans.type.i:0;
+  var petEmoji=petType<=1?'🐕':'🐈';
+  var searchTerm=encodeURIComponent((petType<=1?'犬':'猫')+(budgetIdx>=2?' プレミアム':'')+(key==='allergy'?' グレインフリー':key==='diet'?' ダイエット':key==='senior'?' シニア':key==='puppy'?' パピー':'')+' ドッグフード');
+  var amazonUrl='https://www.amazon.co.jp/s?k='+searchTerm+'&tag=appadaycrea0f-22';
+
+  document.getElementById('aff-area').innerHTML='<a href="'+amazonUrl+'" target="_blank" rel="noopener" class="block bg-yellow-400 text-gray-900 font-bold py-3 px-4 rounded-xl text-center text-sm hover:bg-yellow-500 transition">'+petEmoji+' Amazonで'+food.type+'を探す →</a><p class="text-xs text-gray-400 text-center mt-2">Amazonアソシエイトプログラム参加中</p>';
+
+  show('results');
+}
+
+function restart() { cur=0; ans={}; show('intro'); }
+</script>
+</body>
+</html>
