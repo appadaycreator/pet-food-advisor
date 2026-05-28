@@ -4,7 +4,7 @@
   "description": "愛犬・愛猫の年齢・体重・アレルギーから最適なペットフードを無料診断。ドライ・ウェット比較。",
   "start_url": "/pet-food-advisor/",
   "display": "standalone",
-  "background_color": "#f8faf9",
+  "background_color": "#ffffff",
   "theme_color": "#7c3aed",
   "lang": "ja",
   "icons": [
