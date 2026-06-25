@@ -28,7 +28,7 @@ a{text-decoration:none;color:inherit;}
 .hdr-cta:hover{background:#059669;}
 
 /* Hero */
-.hero{position:relative;min-height:600px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(160deg,#ffffff 0%,#f8fffd 40%,#ecfdf5 100%);}
+.hero{position:relative;min-height:600px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,#ecfdf5 0%,#f0fdf4 45%,#d1fae5 100%);}
 .hero-bg{display:none;}
 .hero-overlay{display:none;}
 .hero-content{position:relative;z-index:2;max-width:1100px;margin:0 auto;width:100%;padding:96px 24px;display:grid;grid-template-columns:1fr 380px;gap:56px;align-items:center;}
@@ -134,8 +134,8 @@ a{text-decoration:none;color:inherit;}
 .cta-bottom-in{position:relative;z-index:1;}
 .cta-bottom h2{font-size:clamp(20px,3vw,32px);font-weight:900;color:#fff;margin-bottom:12px;}
 .cta-bottom p{font-size:15px;color:rgba(255,255,255,.88);margin-bottom:28px;}
-.btn-cta-bottom{background:#F59E0B;color:#fff;padding:20px 52px;border-radius:14px;font-size:20px;font-weight:800;display:inline-block;transition:.15s;box-shadow:0 6px 28px rgba(245,158,11,.5);letter-spacing:.02em;}
-.btn-cta-bottom:hover{background:#D97706;transform:translateY(-3px);box-shadow:0 8px 32px rgba(245,158,11,.6);}
+.btn-cta-bottom{background:#F59E0B;color:#fff;padding:16px 36px;border-radius:12px;font-size:17px;font-weight:800;display:inline-block;transition:.15s;box-shadow:0 4px 20px rgba(245,158,11,.4);}
+.btn-cta-bottom:hover{background:#D97706;transform:translateY(-2px);}
 .cta-pet-imgs{display:flex;justify-content:center;gap:16px;margin-top:32px;}
 .cta-pet-img{width:100px;height:100px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.5);}
 
@@ -146,23 +146,6 @@ a{text-decoration:none;color:inherit;}
 /* Footer */
 footer{background:#1a1a1a;color:#9ca3af;text-align:center;padding:24px;font-size:12px;}
 
-/* === Decorative & enhanced elements === */
-.deco-paw{position:absolute;pointer-events:none;user-select:none;opacity:.11;font-size:32px;line-height:1;}
-.expert-banner{background:linear-gradient(90deg,#064e3b 0%,#065f46 50%,#047857 100%);color:#fff;text-align:center;padding:9px 24px;font-size:12px;font-weight:700;letter-spacing:.04em;display:flex;justify-content:center;align-items:center;gap:28px;flex-wrap:wrap;}
-.expert-banner-item{display:inline-flex;align-items:center;gap:5px;}
-.stats-row{display:flex;justify-content:center;gap:48px;padding:28px 24px;background:#fff;flex-wrap:wrap;border-top:1px solid #d1fae5;border-bottom:3px solid #d1fae5;}
-.stat-item{text-align:center;}
-.stat-num{font-size:40px;font-weight:900;color:#10B981;line-height:1;}
-.stat-unit{font-size:15px;font-weight:700;color:#059669;}
-.stat-label{font-size:12px;color:#6b7280;margin-top:4px;}
-.fi-g1{background:linear-gradient(135deg,#d1fae5,#a7f3d0)!important;}
-.fi-g2{background:linear-gradient(135deg,#dbeafe,#bfdbfe)!important;}
-.fi-g3{background:linear-gradient(135deg,#fef3c7,#fde68a)!important;}
-.fi-g4{background:linear-gradient(135deg,#fce7f3,#fbcfe8)!important;}
-.feature-card{box-shadow:0 4px 20px rgba(16,185,129,.12);border:2px solid #d1fae5;}
-.feature-card:hover{box-shadow:0 10px 36px rgba(16,185,129,.22);}
-.cta-bottom h2{font-size:clamp(24px,3.5vw,38px)!important;}
-.concerns-bg{position:relative;}
 @media(max-width:768px){
   .hero-content{grid-template-columns:1fr;gap:24px;}
   .hero-card{display:none;}
@@ -196,23 +179,10 @@ footer{background:#1a1a1a;color:#9ca3af;text-align:center;padding:24px;font-size
   </div>
 </header>
 
-<!-- Expert Banner -->
-<div class="expert-banner">
-  <div class="expert-banner-item"><span>🏅</span><span>獣医師・動物栄養士 監修済み</span></div>
-  <div class="expert-banner-item"><span>🔒</span><span>完全プライバシー保護</span></div>
-  <div class="expert-banner-item"><span>⭐</span><span>利用者満足度 95%</span></div>
-  <div class="expert-banner-item"><span>🐾</span><span>診断実績 50,000件超</span></div>
-</div>
-
 <!-- Hero -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <span class="deco-paw" style="top:12%;left:3%;transform:rotate(-25deg)">🐾</span>
-  <span class="deco-paw" style="bottom:18%;left:7%;transform:rotate(15deg);font-size:24px">🌿</span>
-  <span class="deco-paw" style="top:28%;right:5%;transform:rotate(20deg)">🐾</span>
-  <span class="deco-paw" style="top:65%;right:9%;transform:rotate(-12deg);font-size:22px">🌿</span>
-  <span class="deco-paw" style="bottom:10%;right:18%;transform:rotate(30deg);font-size:18px">🐾</span>
   <div class="hero-content">
     <div class="hero-left">
       <h1>愛犬・愛猫に<span>最適な</span><br>ペットフード診断</h1>
@@ -284,33 +254,11 @@ footer{background:#1a1a1a;color:#9ca3af;text-align:center;padding:24px;font-size
   </div>
 </div>
 
-<!-- Stats Row -->
-<div class="stats-row">
-  <div class="stat-item">
-    <div class="stat-num">50,000<span class="stat-unit">+</span></div>
-    <div class="stat-label">診断実績</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">40<span class="stat-unit">以上</span></div>
-    <div class="stat-label">チェック項目</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">95<span class="stat-unit">%</span></div>
-    <div class="stat-label">利用者満足度</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">0<span class="stat-unit">円</span></div>
-    <div class="stat-label">完全無料</div>
-  </div>
-</div>
-
 <!-- Concerns Section -->
-<section class="sec concerns-bg" id="concerns" style="position:relative;overflow:hidden;">
-  <span class="deco-paw" style="top:5%;right:2%;font-size:48px;transform:rotate(15deg)">🐾</span>
-  <span class="deco-paw" style="bottom:8%;left:2%;font-size:40px;transform:rotate(-20deg)">🌿</span>
+<section class="sec concerns-bg" id="concerns">
   <div class="max-w">
     <div style="text-align:center;margin-bottom:40px;">
-      <div class="sec-label">🐾 こんなお悩みに</div>
+      <div class="sec-label">こんなお悩みに</div>
       <h2 class="sec-title">愛ペットの健康悩みを<br>まとめて解決</h2>
       <p class="sec-sub">アレルギーから肥満まで、多様な健康悩みに対応した診断を提供します</p>
     </div>
@@ -355,14 +303,6 @@ footer{background:#1a1a1a;color:#9ca3af;text-align:center;padding:24px;font-size
         <img src="../assets/icons/split/02-04.png" alt="栄養">
         <span>栄養バランス</span>
       </div>
-      <div class="concern-card">
-        <img src="../assets/icons/split/02-05.png" alt="食いつき">
-        <span>食いつき</span>
-      </div>
-      <div class="concern-card">
-        <img src="../assets/icons/split/04-03.png" alt="歯・口臭">
-        <span>歯・口臭ケア</span>
-      </div>
     </div>
     <!-- Photo strip -->
     <div class="photo-strip" style="margin-top:32px;">
@@ -381,7 +321,7 @@ footer{background:#1a1a1a;color:#9ca3af;text-align:center;padding:24px;font-size
 <section class="sec" id="steps">
   <div class="max-w">
     <div style="text-align:center;margin-bottom:40px;">
-      <div class="sec-label">✨ 診断はかんたん5ステップ</div>
+      <div class="sec-label">診断はかんたん5ステップ</div>
       <h2 class="sec-title">たった5つの質問で<br>最適なフードがわかる</h2>
     </div>
     <div class="steps-grid">
@@ -436,12 +376,12 @@ footer{background:#1a1a1a;color:#9ca3af;text-align:center;padding:24px;font-size
 <section class="sec features-bg" id="features">
   <div class="max-w">
     <div style="text-align:center;margin-bottom:40px;">
-      <div class="sec-label">🌟 豊富な情報で、納得のフード・用品選びをサポート</div>
+      <div class="sec-label">豊富な情報で、納得のフード・用品選びをサポート</div>
       <h2 class="sec-title">他サービスにない<br>4つの特長</h2>
     </div>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-card-icon fi-g1">
+        <div class="feature-card-icon">
           <img src="../assets/icons/split/03-01.png" alt="プライバシー">
         </div>
         <div>
@@ -454,7 +394,7 @@ footer{background:#1a1a1a;color:#9ca3af;text-align:center;padding:24px;font-size
         </div>
       </div>
       <div class="feature-card">
-        <div class="feature-card-icon fi-g2">
+        <div class="feature-card-icon">
           <img src="../assets/icons/split/04-03.png" alt="栄養チャート">
         </div>
         <div>
@@ -480,7 +420,7 @@ footer{background:#1a1a1a;color:#9ca3af;text-align:center;padding:24px;font-size
         </div>
       </div>
       <div class="feature-card">
-        <div class="feature-card-icon fi-g3">
+        <div class="feature-card-icon">
           <img src="../assets/icons/split/03-04.png" alt="複数ペット">
         </div>
         <div>
@@ -493,7 +433,7 @@ footer{background:#1a1a1a;color:#9ca3af;text-align:center;padding:24px;font-size
         </div>
       </div>
       <div class="feature-card">
-        <div class="feature-card-icon fi-g4">
+        <div class="feature-card-icon">
           <img src="../assets/icons/split/03-07.png" alt="QR共有">
         </div>
         <div>
@@ -574,7 +514,7 @@ footer{background:#1a1a1a;color:#9ca3af;text-align:center;padding:24px;font-size
 <section class="sec features-bg">
   <div class="max-w">
     <div style="text-align:center;margin-bottom:40px;">
-      <div class="sec-label">💬 利用者の声</div>
+      <div class="sec-label">利用者の声</div>
       <h2 class="sec-title">実際に使った方からの<br>喜びの声</h2>
     </div>
     <div class="test-grid">
@@ -640,25 +580,14 @@ footer{background:#1a1a1a;color:#9ca3af;text-align:center;padding:24px;font-size
 
 <!-- Bottom CTA -->
 <section class="cta-bottom">
-  <span class="deco-paw" style="top:12%;left:5%;font-size:52px;opacity:.15;transform:rotate(-20deg)">🐾</span>
-  <span class="deco-paw" style="bottom:12%;right:5%;font-size:52px;opacity:.15;transform:rotate(15deg)">🐾</span>
-  <span class="deco-paw" style="top:45%;left:12%;font-size:36px;opacity:.1;transform:rotate(30deg)">🌿</span>
-  <span class="deco-paw" style="top:45%;right:12%;font-size:36px;opacity:.1;transform:rotate(-30deg)">🌿</span>
-  <span class="deco-paw" style="top:20%;right:20%;font-size:28px;opacity:.1;transform:rotate(10deg)">🐾</span>
   <div class="cta-bottom-in">
-    <div style="margin-bottom:16px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
-      <span style="background:rgba(255,255,255,.2);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid rgba(255,255,255,.4);">🏅 獣医師監修</span>
-      <span style="background:rgba(255,255,255,.2);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid rgba(255,255,255,.4);">🔒 完全無料</span>
-      <span style="background:rgba(255,255,255,.2);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid rgba(255,255,255,.4);">⚡ 2分で完了</span>
-    </div>
     <h2>愛犬・愛猫に合うフードと用品を、<br>今すぐかんたん診断！</h2>
-    <p style="font-size:16px;color:rgba(255,255,255,.9);margin-bottom:32px;">無料・登録不要・プライバシー重視。5つの質問で最適なフードがわかります。</p>
+    <p>無料・登録不要・プライバシー重視。5つの質問で最適なフードがわかります。</p>
     <a href="../" class="btn-cta-bottom">🐾 無料で診断する →</a>
-    <div style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.8);font-weight:700;">もちろん無料！クレカ不要・登録不要</div>
+    <div style="margin-top:16px;font-size:12px;color:rgba(255,255,255,.7);">もちろん無料！</div>
     <div class="cta-pet-imgs">
       <img src="../assets/photos/photo_05.jpg" alt="犬" class="cta-pet-img">
       <img src="../assets/photos/photo_06.jpg" alt="猫" class="cta-pet-img">
-      <img src="../assets/photos/photo_01.jpg" alt="ペット" class="cta-pet-img">
     </div>
   </div>
 </section>
