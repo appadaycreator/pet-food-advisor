@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>愛犬・愛猫に最適なペットフード診断 | プライバシー重視の無料診断ツール</title>
+<meta name="description" content="愛犬・愛猫に最適なペットフード・用品を無料で診断。プライバシー重視でブラウザ内処理。給与量計算や栄養バランスもチェック。">
+<meta property="og:title" content="愛犬・愛猫に最適なペットフード診断 | プライバシー重視の無料診断ツール">
+<meta property="og:description" content="愛犬・愛猫に最適なペットフード・用品を無料で診断。プライバシー重視でブラウザ内処理。給与量計算や栄養バランスもチェック。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://appadaycreator.com/pet-food-advisor/lp/">
+<meta property="og:image" content="https://appadaycreator.com/pet-food-advisor/assets/photos/photo_01.jpg">
+<link rel="canonical" href="https://appadaycreator.com/pet-food-advisor/lp/">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:sans-serif;color:#1a1a1a;background:#fff;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e5e7eb;padding:0 24px;height:64px;display:flex;align-items:center;}
+.hdr-in{max-width:1100px;margin:0 auto;width:100%;display:flex;align-items:center;gap:32px;}
+.hdr-logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px;color:#10B981;}
+.hdr-logo img{width:24px;height:24px;}
+.hdr-nav{display:flex;gap:24px;flex:1;margin-left:16px;}
+.hdr-nav a{font-size:13px;color:#374151;font-weight:500;transition:.15s;}
+.hdr-nav a:hover{color:#10B981;}
+.hdr-cta{background:#10B981;color:#fff;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;white-space:nowrap;transition:.15s;}
+.hdr-cta:hover{background:#059669;}
+
+/* Hero */
+.hero{position:relative;min-height:580px;display:flex;align-items:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-image:url('../assets/photos/photo_01.jpg');background-size:cover;background-position:center top;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.35) 55%,rgba(0,0,0,.1) 100%);}
+.hero-content{position:relative;z-index:2;max-width:1100px;margin:0 auto;width:100%;padding:80px 24px;display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center;}
+.hero-left h1{font-size:clamp(26px,4vw,44px);font-weight:900;color:#fff;line-height:1.25;margin-bottom:16px;letter-spacing:-0.02em;}
+.hero-left h1 span{color:#10B981;}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.88);margin-bottom:28px;line-height:1.8;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-hero-main{background:#10B981;color:#fff;padding:14px 28px;border-radius:10px;font-size:16px;font-weight:800;display:inline-flex;align-items:center;gap:8px;transition:.15s;}
+.btn-hero-main:hover{background:#059669;transform:translateY(-1px);}
+.btn-hero-sub{background:rgba(255,255,255,.15);color:#fff;padding:14px 24px;border-radius:10px;font-size:14px;font-weight:600;border:2px solid rgba(255,255,255,.5);transition:.15s;}
+.btn-hero-sub:hover{background:rgba(255,255,255,.25);}
+.hero-badges{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;}
+.hero-badge{background:rgba(255,255,255,.15);backdrop-filter:blur(6px);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;gap:5px;}
+.hero-card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 8px 40px rgba(0,0,0,.18);}
+.hero-card-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.hero-card-top img{width:60px;height:60px;border-radius:10px;object-fit:cover;}
+.hero-card-rating{display:flex;align-items:center;gap:4px;font-size:13px;color:#F59E0B;font-weight:700;}
+.hero-card-label{font-size:11px;color:#6b7280;}
+.hero-result-preview{background:#f0fdf4;border-radius:10px;padding:12px;font-size:12px;color:#065f46;}
+
+/* Feature Bar */
+.feat-bar{background:#f0fdf4;border-top:3px solid #10B981;border-bottom:1px solid #d1fae5;padding:24px 24px;}
+.feat-bar-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.feat-bar-item{display:flex;align-items:center;gap:14px;}
+.feat-bar-icon{width:48px;height:48px;flex-shrink:0;}
+.feat-bar-title{font-size:14px;font-weight:800;color:#065f46;margin-bottom:2px;}
+.feat-bar-desc{font-size:12px;color:#374151;}
+
+/* Section base */
+.sec{padding:64px 24px;}
+.sec-title{font-size:clamp(20px,3vw,28px);font-weight:900;text-align:center;color:#111;margin-bottom:8px;}
+.sec-sub{text-align:center;font-size:14px;color:#6b7280;margin-bottom:40px;}
+.sec-label{display:inline-block;background:#d1fae5;color:#065f46;font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:12px;}
+.max-w{max-width:1100px;margin:0 auto;}
+
+/* Concerns */
+.concerns-bg{background:#fafafa;}
+.concerns-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:16px;}
+.concern-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px 10px;text-align:center;transition:.15s;}
+.concern-card:hover{border-color:#10B981;box-shadow:0 4px 12px rgba(16,185,129,.1);}
+.concern-card img{width:44px;height:44px;margin:0 auto 8px;}
+.concern-card span{font-size:11px;font-weight:700;color:#374151;display:block;}
+
+/* Steps */
+.steps-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;}
+.steps-grid::before{content:'';position:absolute;top:44px;left:10%;right:10%;height:3px;background:linear-gradient(90deg,#10B981,#F59E0B);border-radius:3px;}
+.step-item{text-align:center;position:relative;z-index:1;padding:0 8px;}
+.step-num{width:88px;height:88px;border-radius:50%;border:4px solid #10B981;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;overflow:hidden;background:#fff;}
+.step-num img{width:100%;height:100%;object-fit:cover;}
+.step-tag{background:#10B981;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-bottom:6px;display:inline-block;}
+.step-title{font-size:12px;font-weight:800;color:#111;margin-bottom:4px;}
+.step-desc{font-size:11px;color:#6b7280;line-height:1.5;}
+
+/* Features Cards */
+.features-bg{background:#f8fafc;}
+.features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.feature-card{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;display:flex;gap:20px;align-items:flex-start;}
+.feature-card-icon{width:56px;height:56px;flex-shrink:0;background:#f0fdf4;border-radius:12px;display:flex;align-items:center;justify-content:center;}
+.feature-card-icon img{width:36px;height:36px;}
+.feature-card h3{font-size:15px;font-weight:800;color:#111;margin-bottom:6px;}
+.feature-card p{font-size:13px;color:#6b7280;line-height:1.7;}
+.feature-chart{margin-top:10px;background:#f0fdf4;border-radius:8px;padding:10px;}
+.chart-bar{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:11px;}
+.chart-bar-label{width:60px;color:#374151;font-weight:600;flex-shrink:0;}
+.chart-bar-track{flex:1;background:#d1fae5;border-radius:4px;height:8px;position:relative;}
+.chart-bar-fill{height:8px;border-radius:4px;background:#10B981;}
+.chart-bar-val{font-weight:700;color:#059669;width:36px;text-align:right;}
+
+/* Comparison */
+.comp-table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+.comp-table th,.comp-table td{padding:13px 16px;text-align:center;font-size:13px;border-bottom:1px solid #f1f5f9;}
+.comp-table th{background:#10B981;color:#fff;font-weight:700;font-size:12px;}
+.comp-table th:first-child,.comp-table td:first-child{text-align:left;background:#f8fafc;font-weight:600;color:#374151;}
+.comp-table tr:last-child td{border-bottom:none;}
+.comp-ours{background:#f0fdf4!important;font-weight:700!important;color:#065f46!important;}
+.check{color:#10B981;font-size:18px;}
+.cross{color:#d1d5db;font-size:18px;}
+
+/* Testimonials */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.test-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;}
+.test-card-img{width:100%;height:160px;object-fit:cover;}
+.test-card-body{padding:16px;}
+.test-stars{color:#F59E0B;font-size:14px;margin-bottom:6px;}
+.test-text{font-size:12px;color:#374151;line-height:1.7;margin-bottom:10px;}
+.test-name{font-size:11px;font-weight:700;color:#6b7280;}
+
+/* FAQ */
+.faq-bg{background:#f8fafc;}
+.faq-list{max-width:760px;margin:0 auto;display:grid;gap:12px;}
+.faq-item{background:#fff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;}
+.faq-q{padding:14px 18px;font-size:14px;font-weight:700;color:#111;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.faq-q::after{content:'▼';font-size:11px;color:#10B981;flex-shrink:0;}
+.faq-a{padding:0 18px 14px;font-size:13px;color:#475569;line-height:1.8;}
+
+/* Bottom CTA */
+.cta-bottom{background:linear-gradient(135deg,#10B981 0%,#059669 100%);padding:64px 24px;text-align:center;position:relative;overflow:hidden;}
+.cta-bottom::before{content:'';position:absolute;inset:0;background-image:url('../assets/photos/photo_02.jpg');background-size:cover;background-position:center;opacity:.15;}
+.cta-bottom-in{position:relative;z-index:1;}
+.cta-bottom h2{font-size:clamp(20px,3vw,32px);font-weight:900;color:#fff;margin-bottom:12px;}
+.cta-bottom p{font-size:15px;color:rgba(255,255,255,.88);margin-bottom:28px;}
+.btn-cta-bottom{background:#F59E0B;color:#fff;padding:16px 36px;border-radius:12px;font-size:17px;font-weight:800;display:inline-block;transition:.15s;box-shadow:0 4px 20px rgba(245,158,11,.4);}
+.btn-cta-bottom:hover{background:#D97706;transform:translateY(-2px);}
+.cta-pet-imgs{display:flex;justify-content:center;gap:16px;margin-top:32px;}
+.cta-pet-img{width:100px;height:100px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.5);}
+
+/* Photo gallery strip */
+.photo-strip{display:flex;gap:8px;overflow-x:auto;padding:0 24px 12px;}
+.photo-strip img{width:120px;height:90px;object-fit:cover;border-radius:8px;flex-shrink:0;}
+
+/* Footer */
+footer{background:#1a1a1a;color:#9ca3af;text-align:center;padding:24px;font-size:12px;}
+
+@media(max-width:768px){
+  .hero-content{grid-template-columns:1fr;gap:24px;}
+  .hero-card{display:none;}
+  .feat-bar-in{grid-template-columns:1fr;}
+  .features-grid{grid-template-columns:1fr;}
+  .test-grid{grid-template-columns:1fr;gap:16px;}
+  .steps-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
+  .steps-grid::before{display:none;}
+  .hdr-nav{display:none;}
+  .comp-table{font-size:11px;}
+  .comp-table th,.comp-table td{padding:10px 8px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="../" class="hdr-logo">
+      <img src="../assets/icons/split/01-01.png" alt="ロゴ">
+      ペットフード・用品診断
+    </a>
+    <nav class="hdr-nav">
+      <a href="#features">特徴</a>
+      <a href="#steps">診断の流れ</a>
+      <a href="#compare">比較</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+    <a href="../" class="hdr-cta">無料で診断する</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <h1>愛犬・愛猫に<span>最適な</span><br>ペットフード診断</h1>
+      <p class="hero-sub">愛するペットの種類・年齢・体重・健康状態から<br>最適なフードと1日の給与量を無料で診断。<br>プライバシー重視でブラウザ内処理。登録不要。</p>
+      <div class="hero-btns">
+        <a href="../" class="btn-hero-main">🐾 無料で診断する</a>
+        <a href="#steps" class="btn-hero-sub">診断の流れを見る</a>
+      </div>
+      <div class="hero-badges">
+        <span class="hero-badge"><img src="../assets/icons/split/03-01.png" alt="" style="width:14px;height:14px;"> プライバシー重視</span>
+        <span class="hero-badge">⭐ 満足度95%</span>
+        <span class="hero-badge">🔓 登録不要・完全無料</span>
+        <span class="hero-badge">📱 スマホ対応</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-top">
+        <img src="../assets/photos/photo_03.jpg" alt="フード診断結果">
+        <div>
+          <div class="hero-card-rating">★★★★★ <span style="color:#374151;font-size:12px;">4.8</span></div>
+          <div class="hero-card-label" style="margin-top:2px;">利用者満足度</div>
+          <div style="font-size:11px;color:#6b7280;">診断実績 50,000件+</div>
+        </div>
+      </div>
+      <div class="hero-result-preview">
+        <div style="font-size:11px;font-weight:700;color:#065f46;margin-bottom:8px;">📋 診断結果プレビュー</div>
+        <div style="display:grid;gap:5px;">
+          <div style="display:flex;justify-content:space-between;font-size:11px;"><span>推奨フード:</span><strong style="color:#10B981;">グレインフリー</strong></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;"><span>1日の給与量:</span><strong style="color:#10B981;">約50〜70g</strong></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;"><span>健康スコア:</span><strong style="color:#F59E0B;">82 / 100</strong></div>
+        </div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:6px;">
+        <img src="../assets/photos/photo_07.jpg" alt="" style="width:60px;height:50px;object-fit:cover;border-radius:6px;">
+        <img src="../assets/photos/photo_08.jpg" alt="" style="width:60px;height:50px;object-fit:cover;border-radius:6px;">
+        <img src="../assets/photos/photo_09.jpg" alt="" style="width:60px;height:50px;object-fit:cover;border-radius:6px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature Bar -->
+<div class="feat-bar">
+  <div class="feat-bar-in">
+    <div class="feat-bar-item">
+      <img src="../assets/icons/split/04-01.png" alt="" class="feat-bar-icon">
+      <div>
+        <div class="feat-bar-title">40以上の健康・栄養項目をチェック</div>
+        <div class="feat-bar-desc">アレルギー・肥満・消化・毛並みなど詳細に診断</div>
+      </div>
+    </div>
+    <div class="feat-bar-item">
+      <img src="../assets/icons/split/02-01.png" alt="" class="feat-bar-icon">
+      <div>
+        <div class="feat-bar-title">複数ブランドを比較提案</div>
+        <div class="feat-bar-desc">Amazon等で購入できるおすすめフードを複数提示</div>
+      </div>
+    </div>
+    <div class="feat-bar-item">
+      <img src="../assets/icons/split/03-05.png" alt="" class="feat-bar-icon">
+      <div>
+        <div class="feat-bar-title">結果をPDF/メールで送信</div>
+        <div class="feat-bar-desc">診断結果を保存・共有して家族と活用できる</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Concerns Section -->
+<section class="sec concerns-bg" id="concerns">
+  <div class="max-w">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="sec-label">こんなお悩みに</div>
+      <h2 class="sec-title">愛ペットの健康悩みを<br>まとめて解決</h2>
+      <p class="sec-sub">アレルギーから肥満まで、多様な健康悩みに対応した診断を提供します</p>
+    </div>
+    <div class="concerns-grid">
+      <div class="concern-card">
+        <img src="../assets/icons/split/01-03.png" alt="アレルギー">
+        <span>アレルギー</span>
+      </div>
+      <div class="concern-card">
+        <img src="../assets/icons/split/04-04.png" alt="偏食">
+        <span>偏食</span>
+      </div>
+      <div class="concern-card">
+        <img src="../assets/icons/split/04-05.png" alt="肥満">
+        <span>肥満</span>
+      </div>
+      <div class="concern-card">
+        <img src="../assets/icons/split/04-06.png" alt="毛並み">
+        <span>毛並み</span>
+      </div>
+      <div class="concern-card">
+        <img src="../assets/icons/split/04-05.png" alt="消化">
+        <span>消化</span>
+      </div>
+      <div class="concern-card">
+        <img src="../assets/icons/split/04-07.png" alt="水分不足">
+        <span>水分不足</span>
+      </div>
+      <div class="concern-card">
+        <img src="../assets/icons/split/02-03.png" alt="食欲不振">
+        <span>食欲不振</span>
+      </div>
+      <div class="concern-card">
+        <img src="../assets/icons/split/01-04.png" alt="シニアケア">
+        <span>シニアケア</span>
+      </div>
+      <div class="concern-card">
+        <img src="../assets/icons/split/02-07.png" alt="関節">
+        <span>関節ケア</span>
+      </div>
+      <div class="concern-card">
+        <img src="../assets/icons/split/02-04.png" alt="栄養">
+        <span>栄養バランス</span>
+      </div>
+    </div>
+    <!-- Photo strip -->
+    <div class="photo-strip" style="margin-top:32px;">
+      <img src="../assets/photos/photo_10.jpg" alt="">
+      <img src="../assets/photos/photo_11.jpg" alt="">
+      <img src="../assets/photos/photo_12.jpg" alt="">
+      <img src="../assets/photos/photo_13.jpg" alt="">
+      <img src="../assets/photos/photo_14.jpg" alt="">
+      <img src="../assets/photos/photo_15.jpg" alt="">
+      <img src="../assets/photos/photo_16.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- Steps Section -->
+<section class="sec" id="steps">
+  <div class="max-w">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="sec-label">診断はかんたん5ステップ</div>
+      <h2 class="sec-title">たった5つの質問で<br>最適なフードがわかる</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num">
+          <img src="../assets/photos/photo_04.jpg" alt="ステップ1">
+        </div>
+        <div class="step-tag">STEP 1</div>
+        <div class="step-title">ペットの種類を選ぶ</div>
+        <div class="step-desc">犬（小型・大型）・猫・その他から選択</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">
+          <img src="../assets/photos/photo_05.jpg" alt="ステップ2">
+        </div>
+        <div class="step-tag">STEP 2</div>
+        <div class="step-title">年齢・体型を入力</div>
+        <div class="step-desc">子犬・成犬・シニアと体型を選択</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">
+          <img src="../assets/photos/photo_17.jpg" alt="ステップ3">
+        </div>
+        <div class="step-tag">STEP 3</div>
+        <div class="step-title">健康の悩みを選択</div>
+        <div class="step-desc">アレルギー・肥満・毛並みなどから選ぶ</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">
+          <img src="../assets/photos/photo_18.jpg" alt="ステップ4">
+        </div>
+        <div class="step-tag">STEP 4</div>
+        <div class="step-title">予算を入力</div>
+        <div class="step-desc">月の予算から最適な価格帯のフードを提案</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">
+          <img src="../assets/photos/photo_19.jpg" alt="ステップ5">
+        </div>
+        <div class="step-tag">STEP 5</div>
+        <div class="step-title">結果をシェア</div>
+        <div class="step-desc">PDF保存・LINE/SNS共有も簡単</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="../" class="btn-hero-main" style="display:inline-flex;">🐾 今すぐ無料診断する</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="sec features-bg" id="features">
+  <div class="max-w">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="sec-label">豊富な情報で、納得のフード・用品選びをサポート</div>
+      <h2 class="sec-title">他サービスにない<br>4つの特長</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card-icon">
+          <img src="../assets/icons/split/03-01.png" alt="プライバシー">
+        </div>
+        <div>
+          <h3>プライバシー重視・ブラウザ内処理</h3>
+          <p>入力した情報は外部に送信されません。すべてブラウザ内で完結するため、大切なペットの情報が守られます。登録不要で即座に利用できます。</p>
+          <div style="margin-top:10px;display:flex;gap:8px;">
+            <img src="../assets/photos/photo_20.jpg" alt="" style="width:70px;height:52px;object-fit:cover;border-radius:6px;">
+            <img src="../assets/photos/photo_21.jpg" alt="" style="width:70px;height:52px;object-fit:cover;border-radius:6px;">
+          </div>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">
+          <img src="../assets/icons/split/04-03.png" alt="栄養チャート">
+        </div>
+        <div>
+          <h3>栄養成分比較チャートで可視化</h3>
+          <p>タンパク質・脂質・食物繊維・カルシウムなど5項目を radar chart で表示。愛ペットに何が足りないかが一目でわかります。</p>
+          <div class="feature-chart">
+            <div class="chart-bar">
+              <span class="chart-bar-label">タンパク質</span>
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="width:85%"></div></div>
+              <span class="chart-bar-val">85</span>
+            </div>
+            <div class="chart-bar">
+              <span class="chart-bar-label">脂質</span>
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="width:70%"></div></div>
+              <span class="chart-bar-val">70</span>
+            </div>
+            <div class="chart-bar">
+              <span class="chart-bar-label">食物繊維</span>
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="width:90%"></div></div>
+              <span class="chart-bar-val">90</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">
+          <img src="../assets/icons/split/03-04.png" alt="複数ペット">
+        </div>
+        <div>
+          <h3>複数ペット同時診断・比較</h3>
+          <p>犬と猫を同時に診断して比較できます。複数のペットをまとめて管理できるので、多頭飼いの方にも最適です。</p>
+          <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;">
+            <img src="../assets/photos/photo_22.jpg" alt="" style="width:60px;height:50px;object-fit:cover;border-radius:6px;">
+            <img src="../assets/photos/photo_06.jpg" alt="" style="width:60px;height:50px;object-fit:cover;border-radius:6px;">
+          </div>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">
+          <img src="../assets/icons/split/03-07.png" alt="QR共有">
+        </div>
+        <div>
+          <h3>LINE/SNS共有・QRコード出力</h3>
+          <p>診断結果をQRコードやLINEでシェアできます。PDF保存・メール送信にも対応。獣医師に見せる際にも活用できます。</p>
+          <div style="margin-top:10px;display:flex;align-items:center;gap:8px;">
+            <img src="../assets/icons/split/03-08.png" alt="共有" style="width:36px;height:36px;">
+            <img src="../assets/icons/split/03-06.png" alt="メール" style="width:36px;height:36px;">
+            <img src="../assets/icons/split/03-05.png" alt="PDF" style="width:36px;height:36px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison Table -->
+<section class="sec" id="compare">
+  <div class="max-w">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="sec-label">他のサービスとの比較</div>
+      <h2 class="sec-title">なぜ当サービスが選ばれるのか</h2>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th style="text-align:left;background:#064e3b;">機能</th>
+            <th class="comp-ours" style="background:#10B981;">ペットフード<br>用品診断</th>
+            <th style="background:#374151;">フード<br>診断サイト</th>
+            <th style="background:#374151;">ペット<br>専門サービス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>完全無料・登録不要</td>
+            <td class="comp-ours"><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>プライバシー重視（外部送信なし）</td>
+            <td class="comp-ours"><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>40以上の項目チェック</td>
+            <td class="comp-ours"><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>栄養成分比較チャート</td>
+            <td class="comp-ours"><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+          <tr>
+            <td>PDF/メール送信</td>
+            <td class="comp-ours"><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>複数ペット同時診断</td>
+            <td class="comp-ours"><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="sec features-bg">
+  <div class="max-w">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="sec-label">利用者の声</div>
+      <h2 class="sec-title">実際に使った方からの<br>喜びの声</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <img src="../assets/photos/photo_02.jpg" alt="利用者1" class="test-card-img">
+        <div class="test-card-body">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text">使ってたフードが合ってなかったことがわかって、グレインフリーに変えたら毛並みが本当によくなりました！</p>
+          <div class="test-name">柴犬オーナー・30代女性</div>
+        </div>
+      </div>
+      <div class="test-card">
+        <img src="../assets/photos/photo_03.jpg" alt="利用者2" class="test-card-img">
+        <div class="test-card-body">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text">うちの猫の腎臓ケアフードを探していました。診断で低リン食が推奨されて、獣医師にも見せたら「正解」と言われました。</p>
+          <div class="test-name">猫オーナー・40代男性</div>
+        </div>
+      </div>
+      <div class="test-card">
+        <img src="../assets/photos/photo_04.jpg" alt="利用者3" class="test-card-img">
+        <div class="test-card-body">
+          <div class="test-stars">★★★★☆</div>
+          <p class="test-text">登録不要で使えるのが最高。スマホで5分で終わります。結果をQRコードで保存して夫婦で共有できました。</p>
+          <div class="test-name">ゴールデン飼い主・30代男性</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq-bg" id="faq">
+  <div class="max-w">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="sec-label">よくある質問</div>
+      <h2 class="sec-title">気になる疑問を解消</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">「ペットフード・用品診断」は無料で使えますか？</div>
+        <div class="faq-a">はい、完全無料・登録不要です。ブラウザからすぐにご利用いただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">入力した情報は外部に送信されますか？</div>
+        <div class="faq-a">いいえ、すべての処理はブラウザ内で完結します。外部サーバーへの送信は一切ありません。プライバシーを重視した設計になっています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">診断に何分かかりますか？</div>
+        <div class="faq-a">5つの質問に答えるだけなので、約2〜3分で完了します。スマートフォンでも快適にご利用いただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">診断結果を保存・共有できますか？</div>
+        <div class="faq-a">はい、コピー・テキスト保存・QRコード出力に対応しています。LINE/SNSでの共有も簡単です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">何度でも診断できますか？</div>
+        <div class="faq-a">はい、何度でも無料でご利用いただけます。条件を変えてシミュレーションすることもできます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom CTA -->
+<section class="cta-bottom">
+  <div class="cta-bottom-in">
+    <h2>愛犬・愛猫に合うフードと用品を、<br>今すぐかんたん診断！</h2>
+    <p>無料・登録不要・プライバシー重視。5つの質問で最適なフードがわかります。</p>
+    <a href="../" class="btn-cta-bottom">🐾 無料で診断する →</a>
+    <div style="margin-top:16px;font-size:12px;color:rgba(255,255,255,.7);">もちろん無料！</div>
+    <div class="cta-pet-imgs">
+      <img src="../assets/photos/photo_05.jpg" alt="犬" class="cta-pet-img">
+      <img src="../assets/photos/photo_06.jpg" alt="猫" class="cta-pet-img">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <a href="https://appadaycreator.com/" style="color:#9ca3af;">AppADayCreator</a> | <a href="https://tech-and-brace.co.jp/" style="color:#9ca3af;">株式会社Tech&amp;Brace</a></p>
+  <p style="margin-top:6px;"><a href="../privacy-policy.html" style="color:#9ca3af;">プライバシーポリシー</a></p>
+</footer>
+
+</body>
+</html>
